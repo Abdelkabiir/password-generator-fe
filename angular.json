@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "projects": {
+    "net-pass": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/net-pass",
+      "sourceRoot": "apps/net-pass/src",
+      "prefix": "net-pass",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/net-pass",
+            "index": "apps/net-pass/src/index.html",
+            "main": "apps/net-pass/src/main.ts",
+            "polyfills": "apps/net-pass/src/polyfills.ts",
+            "tsConfig": "apps/net-pass/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/net-pass/src/favicon.ico",
+              "apps/net-pass/src/assets"
+            ],
+            "styles": ["apps/net-pass/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/net-pass/src/environments/environment.ts",
+                  "with": "apps/net-pass/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "net-pass:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "net-pass:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "net-pass:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/net-pass/tsconfig.app.json",
+              "apps/net-pass/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/net-pass/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/net-pass/jest.config.js",
+            "tsConfig": "apps/net-pass/tsconfig.spec.json",
+            "setupFile": "apps/net-pass/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "net-pass-e2e": {
+      "root": "apps/net-pass-e2e",
+      "sourceRoot": "apps/net-pass-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/net-pass-e2e/cypress.json",
+            "tsConfig": "apps/net-pass-e2e/tsconfig.e2e.json",
+            "devServerTarget": "net-pass:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "net-pass:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/net-pass-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/net-pass-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "net-pass"
+}

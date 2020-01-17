@@ -1,0 +1,22 @@
+{
+  "npmScope": "net-pass",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "net-pass": {
+      "tags": []
+    },
+    "net-pass-e2e": {
+      "tags": [],
+      "implicitDependencies": ["net-pass"]
+    }
+  }
+}
