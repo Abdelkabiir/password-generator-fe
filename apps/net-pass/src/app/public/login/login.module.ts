@@ -1,9 +1,11 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './login.component';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatInputModule, MatSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const routes: Routes = [
     {
@@ -21,7 +23,10 @@ const routes: Routes = [
         MatFormFieldModule,
         BrowserAnimationsModule,
         MatInputModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        FormsModule
     ],
     providers: []
 })
