@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MaterialDesignModule } from '../../modules/material-design/material-design.module';
 
 const routes: Routes = [
     {
@@ -20,13 +21,11 @@ const routes: Routes = [
     ],
     imports: [
         RouterModule.forChild(routes),
-        MatFormFieldModule,
         BrowserAnimationsModule,
-        MatInputModule,
         FlexLayoutModule,
         ReactiveFormsModule,
-        MatSelectModule,
-        FormsModule
+        FormsModule,
+        MaterialDesignModule
     ],
     providers: []
 })
