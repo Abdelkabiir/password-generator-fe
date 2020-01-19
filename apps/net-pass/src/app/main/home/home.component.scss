@@ -12,7 +12,15 @@
   }
   
   .main {
-    margin: 20px 36px;
+    margin: 20px 0;
     background-color: #2a5279;
+
+    .circle {
+      background-color: white;
+      // border-radius: 50%;
+      height: 74vw;
+      width: 76vw;
+      margin: 10px;
+    }
   }
   

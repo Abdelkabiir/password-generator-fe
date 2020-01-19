@@ -1,6 +1,9 @@
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import {LoginComponent} from './login.component';
+import { LoginComponent } from './login.component';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
     {
@@ -14,7 +17,11 @@ const routes: Routes = [
         LoginComponent
     ],
     imports: [
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        MatFormFieldModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        FlexLayoutModule
     ],
     providers: []
 })
