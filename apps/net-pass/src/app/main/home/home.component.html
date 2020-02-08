@@ -74,8 +74,20 @@
 
   <div fxLayoutAlign="center center">
       <button
-          (click)="generatePassword()"
-          mat-raised-button
-          class="button"> Generate password </button>
+        [disabled]="!passwordSettingsForm.valid"
+        (click)="generatePassword()"
+        mat-raised-button
+        class="button">
+        Generate password 
+      </button>
+  </div>
+
+  <div *ngIf="password">
+    <div style="text-align: center; margin: 20px 0 0px;">
+      <span>Password:</span>
     </div>
+    <div class="password">
+      <span>{{password}}</span>
+    </div>
+  </div>
 </div>

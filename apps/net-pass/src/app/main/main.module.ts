@@ -7,7 +7,8 @@ import { MaterialDesignModule } from '../core/modules/material-design/material-d
 import { ComponentsModule } from '../core/components/components.module';
 import { OptionCardComponent } from '../core/components/option-card/option-card.component';
 import { ApiModule } from '../core/api/api.module';
-
+import { CommonModule } from '@angular/common';  
+import { BrowserModule } from '@angular/platform-browser';
 const routes: Routes = [
     {
         path: 'home',
@@ -23,7 +24,8 @@ const routes: Routes = [
         FormsModule,
         MaterialDesignModule,
         ComponentsModule,
-        ApiModule
+        ApiModule,
+        CommonModule
     ],
     declarations: [
         HomeComponent

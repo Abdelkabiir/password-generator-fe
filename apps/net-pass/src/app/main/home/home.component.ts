@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit{
         ASCIISymbols : false,
         space : false,
     }
+    password = '';
     
     constructor(private router: Router, private passApi: PasswordApi) {
         this.passwordSettingsForm = new FormGroup({
@@ -42,6 +43,7 @@ export class HomeComponent implements OnInit{
         this.passApi
           .generatePassword(this.passSettings)
           .subscribe(data => {
+            this.password = data.password
             return data;
           })
       }
