@@ -1,6 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
     {
@@ -14,7 +15,8 @@ const routes: Routes = [
         PageNotFoundComponent
     ],
     imports: [
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        FlexLayoutModule
     ],
     providers: []
 })

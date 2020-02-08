@@ -5,6 +5,9 @@ import { LoginModule } from './public/login/login.module';
 import { AppRouting } from './app.routing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PageNotFoundModule } from './public/page-not-found/page-not-found.module';
+import { UserApi } from './core/api/user.api';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,9 +16,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginModule,
     AppRouting,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PageNotFoundModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserApi],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
