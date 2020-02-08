@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit{
     login(): void {
         this.username = this.loginForm.get('username').value,
         this.password = this.loginForm.get('password').value
-        console.log('login !')
         this.router.navigateByUrl('home')
     }
 }
