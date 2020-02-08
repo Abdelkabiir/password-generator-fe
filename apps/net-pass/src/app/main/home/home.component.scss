@@ -8,19 +8,51 @@
     background-color: #2a5279;
     color: white;
     padding: 5px;
-    border-radius: 3px;
   }
   
   .main {
     margin: 20px 0;
-    background-color: #2a5279;
+    background-color: #dcdcdc;
+    padding: 50px;
 
-    .circle {
+    color: #2a5279;
+    .input-number {
+      width: 400px;
+    }
+    .button {
       background-color: white;
-      // border-radius: 50%;
-      height: 74vw;
-      width: 76vw;
-      margin: 10px;
+      border-radius: 5px;
+      color: #2a5279;
+      margin: 30px 0 0;
+      height: 50px;
+      width: 300px;
+      font-size: 25px;
+    }
+    .cards{
+      width: 500px;
+      flex-wrap: wrap;
+
+      .card {
+        margin: 10px;
+        height: 100px;
+        width: 150px;
+        cursor: pointer;
+        color: white;
+        border-radius: 4px;
+        font-size: 14px;
+        // COULDN'T USE FXLAYOUT FOR SOME REASON !
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+  
+      .not-selected {
+        background-color: #758fa8;
+      }
+      .selected {
+        background-color: green;
+      }
     }
   }
   
