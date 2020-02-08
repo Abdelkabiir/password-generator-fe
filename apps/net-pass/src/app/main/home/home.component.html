@@ -37,39 +37,38 @@
   <div class="cards" fxLayoutAlign="center center" fxLayout="row">
     <div
       class="card"
-      (click)="changeValue('symbols')"
-      [ngClass]="{'selected': passSettings.symbols, 'not-selected': !passSettings.symbols}">
-        Include Symbols:( e.g. @#$% )
-    </div>
-    <div
-      class="card"
       (click)="changeValue('numbers')"
       [ngClass]="{'selected': passSettings.numbers, 'not-selected': !passSettings.numbers}">
         Include Numbers:( e.g. 123456 )
     </div>
+
     <div
       class="card"
       (click)="changeValue('lowerCase')"
       [ngClass]="{'selected': passSettings.lowerCase, 'not-selected': !passSettings.lowerCase}">
         Include Lowercase Characters:( e.g. abcdefgh )
     </div>
+
     <div
       class="card"
       (click)="changeValue('upercase')"
       [ngClass]="{'selected': passSettings.upercase, 'not-selected': !passSettings.upercase}">
         Include Uppercase Characters:( e.g. ABCDEFGH )
     </div>
+
     <div
       class="card"
-      (click)="changeValue('similarChars')"
-      [ngClass]="{'selected': passSettings.similarChars, 'not-selected': !passSettings.similarChars}">
-        Exclude Similar Characters:( e.g. i, l, 1, L, o, 0, O )
+      (click)="changeValue('symbols')"
+      [ngClass]="{'selected': passSettings.symbols, 'not-selected': !passSettings.symbols}">
+        Include Symbols:( e.g. @#$% )
     </div>
+    
+    
     <div
       class="card"
-      (click)="changeValue('ambiguous')"
-      [ngClass]="{'selected': passSettings.ambiguous, 'not-selected': !passSettings.ambiguous}">
-        Exclude Ambiguous Characters
+      (click)="changeValue('space')"
+      [ngClass]="{'selected': passSettings.space, 'not-selected': !passSettings.space}">
+        Exclude Space
     </div>
   </div>
 

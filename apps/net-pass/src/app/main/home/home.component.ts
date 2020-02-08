@@ -13,13 +13,13 @@ export class HomeComponent implements OnInit{
     passwordSettingsForm: FormGroup;
     passSettings = {
         length: 6,
-        symbols : false,
         numbers : false,
         lowerCase : false,
         upercase : false,
-        similarChars : false,
-        ambiguous : false
+        ASCIISymbols : false,
+        space : false,
     }
+    
     constructor(private router: Router, private passApi: PasswordApi) {
         this.passwordSettingsForm = new FormGroup({
             length: new FormControl(''),
@@ -35,15 +35,13 @@ export class HomeComponent implements OnInit{
 
     changeValue(option) {
         this.passSettings[option] = ! this.passSettings[option];
-
     }
 
     generatePassword() {
-        this.passSettings.length = this.passwordSettingsForm.get('length').value,
+        this.passSettings.length = this.passwordSettingsForm.get('length').value || this.passSettings.length,
         this.passApi
           .generatePassword(this.passSettings)
           .subscribe(data => {
-            console.log(data);
             return data;
           })
       }
