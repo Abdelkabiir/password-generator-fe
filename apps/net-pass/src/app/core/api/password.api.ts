@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { Options } from '../interfaces/options';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class PasswordApi {
   private apiUrl: string = environment.apiBaseUrl;
   constructor(private http: HttpClient) { }
 
-  generatePassword(options): Observable<any> {
+  generatePassword(options: Options): Observable<any> {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');
     const body = {
