@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginInterface } from '../interfaces/login-interface';
+import { LoginInterface } from '../models/login-interface';
+import { map } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class UserApi {
+private apiUrl: string = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 
-  createSession(credentials: LoginInterface) {
-    let headers: HttpHeaders = new HttpHeaders();
-    headers = headers.append('Authorization', `Basic ${btoa(`${credentials.username}:${credentials.password}`)}`);
-    const body = null;
-    
-    return this.http.post('api/login', body, {headers})
+  login(credentials) {
+    const body = {
+      session: credentials
+    }
+    return this.http.post<any>(this.apiUrl + 'session', body);
   }
 }

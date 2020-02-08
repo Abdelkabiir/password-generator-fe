@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { PasswordApi } from '../../core/api/password.api';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
     selector: 'net-pass-home',
@@ -21,7 +22,10 @@ export class HomeComponent implements OnInit{
     }
     password = '';
     
-    constructor(private router: Router, private passApi: PasswordApi) {
+    constructor(
+        private router: Router,
+        private passApi: PasswordApi,
+        private authService: AuthService) {
         this.passwordSettingsForm = new FormGroup({
             length: new FormControl(''),
         })
@@ -31,7 +35,7 @@ export class HomeComponent implements OnInit{
     }
 
     logout(): void {
-        this.router.navigateByUrl('login')
+        this.authService.logout();
     }
 
     changeValue(option) {

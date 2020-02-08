@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialDesignModule } from '../../core/modules/material-design/material-design.module';
+import { AuthService } from '../../core/services/auth.service';
 
 const routes: Routes = [
     {
@@ -25,7 +26,7 @@ const routes: Routes = [
         FormsModule,
         MaterialDesignModule
     ],
-    providers: []
+    providers: [AuthService]
 })
 
 export class LoginModule {

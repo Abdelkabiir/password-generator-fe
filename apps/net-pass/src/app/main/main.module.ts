@@ -5,14 +5,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialDesignModule } from '../core/modules/material-design/material-design.module';
 import { ComponentsModule } from '../core/components/components.module';
-import { OptionCardComponent } from '../core/components/option-card/option-card.component';
 import { ApiModule } from '../core/api/api.module';
 import { CommonModule } from '@angular/common';  
-import { BrowserModule } from '@angular/platform-browser';
+import { AuthGuard } from '../core/_helpers/auth.guard';
 const routes: Routes = [
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: '',
+        redirectTo: 'home'
     }
 ];
 
@@ -30,6 +34,7 @@ const routes: Routes = [
     declarations: [
         HomeComponent
     ],
+    exports: [HomeComponent],
     providers: []
 })
 
