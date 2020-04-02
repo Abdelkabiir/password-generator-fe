@@ -1,8 +1,13 @@
-# NetPass
+# Password-generator-fe (frontend side)
 
 This project was generated using [Nx](https://nx.dev).
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+**This application is a simple random password generator**
+
+[backend side](https://github.com/Abdelkabiir/password-generator-be)
+
+
+[database connection helpers](https://github.com/Abdelkabiir/password-generator-db)
 
 ## Quick Start & Documentation
 
