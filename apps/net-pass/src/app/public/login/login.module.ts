@@ -8,27 +8,22 @@ import { MaterialDesignModule } from '../../core/modules/material-design/materia
 import { AuthService } from '../../core/services/auth.service';
 
 const routes: Routes = [
-    {
-        path: 'login',
-        component: LoginComponent
-    }
+  {
+    path: 'login',
+    component: LoginComponent
+  }
 ];
 
 @NgModule({
-    declarations: [
-        LoginComponent
-    ],
-    imports: [
-        RouterModule.forChild(routes),
-        BrowserAnimationsModule,
-        FlexLayoutModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MaterialDesignModule
-    ],
-    providers: [AuthService]
+  declarations: [LoginComponent],
+  imports: [
+    RouterModule.forChild(routes),
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialDesignModule
+  ],
+  providers: [AuthService]
 })
-
-export class LoginModule {
-
-}
+export class LoginModule {}

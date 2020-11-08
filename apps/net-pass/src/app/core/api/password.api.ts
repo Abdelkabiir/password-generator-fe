@@ -10,23 +10,21 @@ import { Options } from '../models/options';
 })
 export class PasswordApi {
   private apiUrl: string = environment.apiBaseUrl;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   generatePassword(options: Options): Observable<any> {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Accept', 'application/json');
     const body = {
       options
-    }
-    return this.http.post(this.apiUrl + 'password',body, {headers})
-      .pipe(
-        map((data) => {
-          return data;
-        }), catchError( error => {
-          return throwError( "Couldn't create passwors" + error);
-        })
-      );
-    }
-
+    };
+    return this.http.post(this.apiUrl + 'password', body, { headers }).pipe(
+      map(data => {
+        return data;
+      }),
+      catchError(error => {
+        return throwError("Couldn't create passwors" + error);
+      })
+    );
+  }
 }
-

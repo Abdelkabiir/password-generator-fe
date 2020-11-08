@@ -9,13 +9,11 @@ export class OptionCardComponent implements OnInit {
   @Input() option = false;
   @Input() title = 'false';
   // @Output() value = new EventEmitter<boolean>();
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // changeValue() {
   //   this.value.emit(!this.option)
   // }
-
 }

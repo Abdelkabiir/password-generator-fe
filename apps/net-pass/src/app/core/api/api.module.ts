@@ -6,13 +6,7 @@ import { UserApi } from './user.api';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    HttpClientModule
-  ],
-  providers: [
-    PasswordApi,
-    UserApi
-  ]
+  imports: [CommonModule, HttpClientModule],
+  providers: [PasswordApi, UserApi]
 })
-export class ApiModule { }
+export class ApiModule {}

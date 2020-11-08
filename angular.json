@@ -87,10 +87,7 @@
               "apps/net-pass/tsconfig.app.json",
               "apps/net-pass/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/net-pass/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/net-pass/**"]
           }
         },
         "test": {
@@ -124,13 +121,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/net-pass-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/net-pass-e2e/**"
-            ]
+            "tsConfig": ["apps/net-pass-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/net-pass-e2e/**"]
           }
         }
       }

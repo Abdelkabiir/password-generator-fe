@@ -1,53 +1,52 @@
-<div
+<div fxLayoutAlign="center center" style="height: 100%;">
+  <div
+    class="container"
+    style="width: 430px; background-color: white; border-radius: 5px;"
     fxLayoutAlign="center center"
-    style="height: 100%;">
-    <div
-        class="container"
-        style="width: 430px; background-color: white; border-radius: 5px;"
-        fxLayoutAlign="center center"
-        fxLayout="column">
-
-        <p style="color: #2a5279;
+    fxLayout="column"
+  >
+    <p
+      style="color: #2a5279;
         font-size: 20px;
-        font-weight: bold;">
-            Welcome !
-        </p>
+        font-weight: bold;"
+    >
+      Welcome !
+    </p>
 
-        <form
-            [formGroup]="loginForm"
-            fxLayout="column"
-            style="padding: 20px;">
-            <mat-form-field>
-                <input
-                    matInput
-                    type="text"
-                    placeholder="Username"
-                    formControlName="username"
-                    required
-                >
-            </mat-form-field>
-            <mat-form-field>
-                <input
-                    matInput
-                    type="password"
-                    formControlName="password"
-                    placeholder="Password"
-                    required
-                >
-            </mat-form-field>
+    <form [formGroup]="loginForm" fxLayout="column" style="padding: 20px;">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Username"
+          formControlName="username"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          required
+        />
+      </mat-form-field>
 
-            <div fxLayoutAlign="center center">
-                <button
-                    [disabled]="!loginForm.valid"
-                    (click)="login()"
-                    mat-raised-button
-                    style="width: 100px;
+      <div fxLayoutAlign="center center">
+        <button
+          [disabled]="!loginForm.valid"
+          (click)="login()"
+          mat-raised-button
+          style="width: 100px;
                     height: 30px;
                     background-color: #2a5279;
                     border-radius: 5px;
-                    color: white;"> Login </button>
-              </div>
-        </form>
-
-    </div>
+                    color: white;"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

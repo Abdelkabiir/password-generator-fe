@@ -1,27 +1,24 @@
 <header class="flex">
+  <img alt="Net Pass logo" width="75" src="assets/images/lock.png" />
+  <div style="text-align: center">
+    <h1>Welcome to Net Pass</h1>
+  </div>
+  <div class="flex">
     <img
       alt="Net Pass logo"
-      width="75"
-      src="assets/images/lock.png"
+      width="50"
+      style="cursor: pointer"
+      src="assets/images/logout.png"
+      (click)="logout()"
     />
-    <div style="text-align: center">
-      <h1>Welcome to Net Pass</h1>
-    </div>
-    <div class="flex">
-        <img
-        alt="Net Pass logo"
-        width="50"
-        style="cursor: pointer"
-        src="assets/images/logout.png"
-        (click)="logout()"
-        />
-    </div>
+  </div>
 </header>
 <div class="main" fxLayoutAlign="center center" fxLayout="column">
   <form
     [formGroup]="passwordSettingsForm"
     fxLayout="column"
-    class="input-number">
+    class="input-number"
+  >
     <mat-form-field>
       <input
         matInput
@@ -29,8 +26,8 @@
         placeholder="Password Length"
         formControlName="length"
         required
-        min = "6"
-        >
+        min="6"
+      />
     </mat-form-field>
   </form>
 
@@ -38,48 +35,68 @@
     <div
       class="card"
       (click)="changeValue('numbers')"
-      [ngClass]="{'selected': passSettings.numbers, 'not-selected': !passSettings.numbers}">
-        Include Numbers:( e.g. 123456 )
+      [ngClass]="{
+        selected: passSettings.numbers,
+        'not-selected': !passSettings.numbers
+      }"
+    >
+      Include Numbers:( e.g. 123456 )
     </div>
 
     <div
       class="card"
       (click)="changeValue('lowerCase')"
-      [ngClass]="{'selected': passSettings.lowerCase, 'not-selected': !passSettings.lowerCase}">
-        Include Lowercase Characters:( e.g. abcdefgh )
+      [ngClass]="{
+        selected: passSettings.lowerCase,
+        'not-selected': !passSettings.lowerCase
+      }"
+    >
+      Include Lowercase Characters:( e.g. abcdefgh )
     </div>
 
     <div
       class="card"
       (click)="changeValue('upercase')"
-      [ngClass]="{'selected': passSettings.upercase, 'not-selected': !passSettings.upercase}">
-        Include Uppercase Characters:( e.g. ABCDEFGH )
+      [ngClass]="{
+        selected: passSettings.upercase,
+        'not-selected': !passSettings.upercase
+      }"
+    >
+      Include Uppercase Characters:( e.g. ABCDEFGH )
     </div>
 
     <div
       class="card"
-      (click)="changeValue('symbols')"
-      [ngClass]="{'selected': passSettings.symbols, 'not-selected': !passSettings.symbols}">
-        Include Symbols:( e.g. @#$% )
+      (click)="changeValue('asciiSymbols')"
+      [ngClass]="{
+        selected: passSettings.asciiSymbols,
+        'not-selected': !passSettings.asciiSymbols
+      }"
+    >
+      Include Symbols:( e.g. @#$% )
     </div>
-    
-    
+
     <div
       class="card"
       (click)="changeValue('space')"
-      [ngClass]="{'selected': passSettings.space, 'not-selected': !passSettings.space}">
-        Exclude Space
+      [ngClass]="{
+        selected: passSettings.space,
+        'not-selected': !passSettings.space
+      }"
+    >
+      Include Space
     </div>
   </div>
 
   <div fxLayoutAlign="center center">
-      <button
-        [disabled]="!passwordSettingsForm.valid"
-        (click)="generatePassword()"
-        mat-raised-button
-        class="button">
-        Generate password 
-      </button>
+    <button
+      [disabled]="!passwordSettingsForm.valid"
+      (click)="generatePassword()"
+      mat-raised-button
+      class="button"
+    >
+      Generate password
+    </button>
   </div>
 
   <div *ngIf="password">
@@ -87,7 +104,7 @@
       <span>Password:</span>
     </div>
     <div class="password">
-      <span>{{password}}</span>
+      <span>{{ password }}</span>
     </div>
   </div>
 </div>

@@ -6,14 +6,14 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class UserApi {
-private apiUrl: string = environment.apiBaseUrl;
+  private apiUrl: string = environment.apiBaseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   login(credentials) {
     const body = {
       session: credentials
-    }
+    };
     return this.http.post<any>(this.apiUrl + 'session', body);
   }
 }
