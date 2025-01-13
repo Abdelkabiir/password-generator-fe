@@ -4,10 +4,10 @@ This project was generated using [Nx](https://nx.dev).
 
 **This application is a simple random password generator**
 
-[backend side](https://github.com/Abdelkabiir/password-generator-be)
-
-
-[database connection helpers](https://github.com/Abdelkabiir/password-generator-db)
+- [backend side (Typescript with Nest)](https://github.com/Abdelkabiir/password-generator-be-typescript)
+- [backend side (Java)](https://github.com/Abdelkabiir/password-generator-be-java)
+- [backend side (Scala)](https://github.com/Abdelkabiir/password-generator-be-scala)
+- [database connection helpers](https://github.com/Abdelkabiir/password-generator-db)
 
 ## Quick Start & Documentation
 
